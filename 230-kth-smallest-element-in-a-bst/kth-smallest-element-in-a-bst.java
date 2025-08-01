@@ -18,28 +18,23 @@
  */
 class Solution {
 
-    private void inOrder(TreeNode root, ArrayList<Integer> list) {
-        int min = Integer.MAX_VALUE;
+    private void inOrder(TreeNode root, PriorityQueue<Integer> minHeap) {
         if (root == null) return;
 
-        inOrder(root.left, list);
-        if (root.val < min) {
-            min = root.val;
-            list.add(min);
-        };
-        inOrder(root.right, list);
+        inOrder(root.left, minHeap);
+        minHeap.offer(root.val);
+        inOrder(root.right, minHeap);
 
     }
 
     public int kthSmallest(TreeNode root, int k) {
-        ArrayList<Integer> list = new ArrayList<>();
-        inOrder(root, list);
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
-        System.out.println(list);
+        inOrder(root, minHeap);
 
-        // for (int i = 0; i < k - 1; i++) {
-        //     minHeap.poll();
-        // }
-        return list.get(k-1);
+        for (int i = 0; i < k - 1; i++) {
+            minHeap.poll();
+        }
+        return minHeap.peek();
     }
 }
