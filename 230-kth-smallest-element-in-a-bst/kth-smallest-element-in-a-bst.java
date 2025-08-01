@@ -12,7 +12,7 @@
  *         this.right = right;
  *     }
  * } 
-    Complexity - O(nlogn)
+    Complexity - O(klogn)
     Space - O(n) extra space
 
  */
