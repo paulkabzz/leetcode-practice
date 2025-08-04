@@ -10,8 +10,8 @@ class Solution {
         }
 
         for (int i = 0; i < max.length; i++) {
-            if (res.contains(max[i])) continue;
             if (s.contains(max[i])) res.add(max[i]);
+            s.remove(max[i]);
 
         }
 
