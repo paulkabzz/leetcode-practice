@@ -30,10 +30,6 @@ class Solution {
             }
         }
 
-        for (Map.Entry<String, ArrayList<String>> entry: map.entrySet()) {
-            res.add(entry.getValue());
-        }
-
-        return res;
+        return new ArrayList(map.values());
     }
 }
