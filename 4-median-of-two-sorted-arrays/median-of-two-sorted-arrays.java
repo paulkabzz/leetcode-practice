@@ -24,9 +24,8 @@ class Solution {
         int middle = merged.length/2;
 
         if ((merged.length % 2) == 0) {
-            int m = (int) middle;
-            double a = (double) merged[m - 1];
-            double b =  (double) merged[m];
+            double a = (double) merged[middle - 1];
+            double b =  (double) merged[middle];
             return ( a + b) /2;
         } 
 
