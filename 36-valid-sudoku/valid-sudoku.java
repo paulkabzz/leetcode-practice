@@ -6,10 +6,7 @@ class Solution {
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < A[i].length; j++) {
                 if (A[i][j] == '.') continue;
-                if (s.contains(A[i][j])) {
-                    System.out.println(A[i][j] + " is repeating in row " + i);
-                    return false;
-                }
+                if (s.contains(A[i][j])) return false;
                 else s.add(A[i][j]);
             }
             s.clear();
@@ -25,10 +22,7 @@ class Solution {
             for (int j = 0; j < A[i].length; j++) {
                 if (A[j][i] == '.') continue;
 
-                if (s.contains(A[j][i])) {
-                    System.out.println(A[j][i] + " is repeating in column " + j);
-                    return false;
-                }
+                if (s.contains(A[j][i])) return false;
                 else s.add(A[j][i]);
             }
             s.clear();
