@@ -30,10 +30,10 @@ class Solution {
         for (Map.Entry<Integer, ArrayList<Integer>> entry: map.entrySet()) {
             ArrayList<Integer> a = entry.getValue();
             if (a.size() >= 2) {
-                if (valid(a, k)) return true;
+                if (valid(a, k)) dupe = true;
             }
         }
 
-        return false;
+        return dupe;
     }
 }
