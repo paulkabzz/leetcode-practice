@@ -5,6 +5,7 @@ class Solution {
 
     private boolean valid(ArrayList<Integer> a, int k) {
         int i, j;
+        
         for (i = 0, j=1; j < a.size(); i++, j++) {
             if (dist(a.get(i), a.get(j)) <= k) return true;
         }
@@ -30,10 +31,10 @@ class Solution {
         for (Map.Entry<Integer, ArrayList<Integer>> entry: map.entrySet()) {
             ArrayList<Integer> a = entry.getValue();
             if (a.size() >= 2) {
-                if (valid(a, k)) dupe = true;
+                if (valid(a, k)) return true;
             }
         }
 
-        return dupe;
+        return false;
     }
 }
